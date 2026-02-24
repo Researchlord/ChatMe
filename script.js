@@ -71,9 +71,13 @@ const byeWords = ["bye","goodbye","see you","later"];
 const identity = ["who are you","what are you","where are you from"];
 const thanks = ["thanks","thank you","thx"];
 
-function matchKeyword(text, keywords){ return keywords.some(k=>text.toLowerCase().includes(k)); }
+function matchKeyword(text, keywords){ 
+  return keywords.some(k=>text.toLowerCase().includes(k));
+}
 
-function getRandomReply(list){ return list[Math.floor(Math.random()*list.length)]; }
+function getRandomReply(list){
+  return list[Math.floor(Math.random()*list.length)];
+}
 
 // BOT REPLY LOGIC
 function simulateReply(userText){
@@ -155,4 +159,5 @@ setBotOnline();
 resetInactivityTimer();
 
 render();
+
 
