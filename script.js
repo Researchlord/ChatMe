@@ -66,7 +66,7 @@ function sendMessage(){
 
 // BOT KEYWORDS & RANDOMIZED REPLIES
 const greetings = ["hi","hello","hey","yo","yoh","hiya","sup"];
-const howAreYou = ["how are you","how's it going","what's up"];
+const howAreYou = ["how are you","how's it going","what's up","how re you"];
 const byeWords = ["bye","goodbye","see you","later"];
 const identity = ["who are you","what are you","where are you from"];
 const thanks = ["thanks","thank you","thx"];
@@ -78,7 +78,7 @@ function getRandomReply(list){ return list[Math.floor(Math.random()*list.length)
 // BOT REPLY LOGIC
 function simulateReply(userText){
   if(!botOnline) return;
-  typingDiv.textContent = "Bot is typing...";
+  typingDiv.textContent = "anonymous is typing...";
   let delay = Math.min(Math.max(userText.length*50, 800), 2500); // delay based on length
   setTimeout(()=>{
     typingDiv.textContent="";
@@ -95,7 +95,7 @@ function simulateReply(userText){
       response = getRandomReply(replies);
     }
     else if(matchKeyword(text,howAreYou)) {
-      const replies = ["I'm feeling great! How about you?", "Doing well, thanks!", "All good here 😄"];
+      const replies = ["I'm feeling great! How about you?", "Doing well, thanks!","having a really messed up day", "All good here 😄"];
       response = getRandomReply(replies);
     }
     else if(matchKeyword(text,thanks)) {
@@ -103,11 +103,11 @@ function simulateReply(userText){
       response = getRandomReply(replies);
     }
     else if(matchKeyword(text,byeWords)) {
-      const replies = ["Goodbye! 👋","See you later!","Bye bye!"];
+      const replies = ["Goodbye! 👋","talk some other time","See you later!","Bye bye!"];
       response = getRandomReply(replies);
     }
     else if(matchKeyword(text,identity)) {
-      const replies = ["I'm ChatMe, your virtual chat buddy 😎","Just a friendly bot here!","I live in the cloud ☁️"];
+      const replies = ["not telling you my name lol 😎","i am busy... talk later","just a lil shortie from Peru and you","I live in warsaw poland"];
       response = getRandomReply(replies);
     }
     else if(text.includes("😂")||text.includes("🤣")) response="Haha I see you're laughing! 😂";
@@ -153,4 +153,5 @@ if(overlay){ overlay.addEventListener("click", ()=>{ sidebar.classList.remove("a
 // INIT
 setBotOnline();
 resetInactivityTimer();
+
 render();
