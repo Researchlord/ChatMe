@@ -123,7 +123,7 @@ function simulateReply(userText){
 
 // ADD BOT MESSAGE
 function addBotMessage(text){
-  messages.push({user:"Bot",text,time:new Date().toLocaleTimeString()});
+  messages.push({user:"anonymous",text,time:new Date().toLocaleTimeString()});
   save(); render();
 }
 
@@ -155,3 +155,4 @@ setBotOnline();
 resetInactivityTimer();
 
 render();
+
