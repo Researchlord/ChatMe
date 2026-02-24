@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatMe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Mobile Navbar -->
+<div class="mobile-navbar">
+  <span id="hamburger" aria-label="Open sidebar" role="button" tabindex="0">&#9776;</span>
+  <h2>💬 ChatMe | chat random anonymous person</h2>
+</div>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <span id="closeSidebar" class="close-btn" aria-label="Close sidebar" role="button" tabindex="0">&times;</span>
+    <h2>💬 ChatMe</h2>
+
+    <!-- BOT STATUS -->
+    <div class="bot-status">
+      <span id="statusDot" class="online"></span>
+      <span id="statusText">Bot Online</span>
+    </div>
+
+    <div class="profile">
+      <img src="https://i.pravatar.cc/150?img=3" id="avatar">
+      <input id="username" placeholder="Enter your name">
+    </div>
+
+    <input type="text" id="search" placeholder="Search messages...">
+
+    <!-- Dark Mode Toggle -->
+    <label class="switch">
+      <input type="checkbox" id="darkToggle">
+      <span class="slider round"></span>
+    </label>
+
+    <button onclick="clearChat()">Clear Chat</button>
+  </div>
+  
+  <!-- Overlay for mobile when sidebar is open -->
+  <div id="overlay" class="overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <!-- Chat Area -->
+  <div class="chat-container">
+    <div id="messages"></div>
+    <div class="typing" id="typing"></div>
+
+    <div class="input-area">
+      <input type="text" id="messageInput" placeholder="Type a message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
